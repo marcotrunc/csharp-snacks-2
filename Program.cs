@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+
 
 
 //Scrivere un codice csharp che crea un accumulatore e poi lo utilizza
