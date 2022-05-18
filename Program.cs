@@ -113,6 +113,33 @@ List<Tuple<string, int>> lCoppie = new List<Tuple<string, int>>()
     new Tuple<string, int > ("diciannove", 191),
 };
 
-lCoppie.Sort((s2, s1) => s2.Item1.CompareTo(s1.Item1));
+/*lCoppie.Sort((s2, s1) => s2.Item1.CompareTo(s1.Item1));
     foreach (Tuple<string, int> s in lCoppie)
-    Console.WriteLine($"{ s.Item1} con  { s.Item2}");
+    Console.WriteLine($"{ s.Item1} con  { s.Item2}"); */
+
+/* Ordinare in base  al secondo elemento della tupla */
+lCoppie.Sort((t1, t2) => t1.Item2.CompareTo(t2.Item2));
+Console.WriteLine(String.Join("\t", lCoppie));
+
+lCoppie.Sort();
+lCoppie.Sort((t1, t2) => t1.Item2 - t2.Item2);
+Console.WriteLine(String.Join ("\t", lCoppie));
+
+/* Ordinare le nuove Tuple formate da tre elementi */
+List<Tuple<int, int, int>> lterne = new List<Tuple<int, int, int>>()
+{
+    new Tuple<int, int, int>(1, 2, 3),
+    new Tuple<int, int, int>(5, 5, 2),
+    new Tuple<int, int, int>(2, 4, 11),
+    new Tuple<int, int, int>(12, 15, 21),
+    new Tuple<int, int, int>(55, 45, 32),
+    new Tuple<int, int, int>(1, 2, 4),
+    new Tuple<int, int, int>(1, 3, 0),
+    new Tuple<int, int, int>(5, 5, 1)
+};
+lterne.Sort();
+Console.WriteLine(String.Join("\t", lterne));
+
+/* Verificare i microsecondi*/
+double microseconds = DateTime.Now.Ticks / (TimeSpan.TicksPerMillisecond / 1000.0);
+Console.WriteLine("microseconds: {0}", microseconds);
